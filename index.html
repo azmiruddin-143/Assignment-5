@@ -11,11 +11,64 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- website color theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d', // আগের রঙ
+                        primarycolor: '#B4F461',
+                        herdercolor: "rgb(249, 247, 243)",
+                        secondarycolor: 'rgba(17, 17, 17, 0.05)',  // এখানে আপনি নিজের নাম ও রঙ ব্যবহার করতে পারেন
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
 
 <body>
-    <h1 class="text-red-700">kire</h1>
-    <img src="assets/quota-protest.png" alt="">
+    <!-- header part start -->
+    <header class="border border-b-2">
+        <!-- nabar start -->
+        <nav class="flex items-center justify-between px-20 py-4 bg-herdercolor">
+            <div id="menu-button">
+                <button class="btn bg-primarycolor hover:bg-[#b4f461ce] px-8">Blog</button>
+            </div>
+            <div id="main-title" class="pl-10">
+                <div class="flex gap-3 items-center">
+                    <img class="w-[30px]" src="assets/logo.png" alt="">
+                    <h1 class="font-bold text-2xl">Donate Bangladesh</h1>
+                </div>
+            </div>
+            <div id="main-amount">
+                <div class="flex items-center gap-2">
+                    <img src="assets/coin.png" alt="">
+                    <h1 class="text-2xl font-bold"> <span>3500 </span>BTD</h1>
+                </div>
+            </div>
+        </nav>
+        <!-- navber end -->
+
+        <!-- hero section start -->
+
+        <div id="hero-section" class="pt-16 pb-5">
+            <div class="flex justify-center gap-14">
+                <button class="btn bg-primarycolor px-8 hover:bg-[#b4f461ce]">Donation</button>
+                <button class="btn bg-secondarycolor px-8 hover:bg-[#b4f461ce]">History</button>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- //header section end/// -->
+
+  
+
+
     <script src="programing.js"></script>
 </body>
 
