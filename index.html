@@ -31,7 +31,7 @@
 
 <body>
     <!-- header part start -->
-    <header class="border border-b-2">
+    <header class="border border-b-2 sticky top-0 z-10 backdrop-blur" id="head">
         <!-- nabar start -->
         <nav class="flex items-center justify-between lg:px-16 2xl:px-20 px-4 sm:px-14 py-4 bg-herdercolor">
             <div id="menu-button">
@@ -47,7 +47,7 @@
             <div id="main-amount">
                 <div class="flex items-center gap-2">
                     <img src="assets/coin.png" alt="">
-                    <h1 class="text-xl sm:text-2xl font-bold"> <span>3500 </span>BTD</h1>
+                    <h1 class="text-xl sm:text-2xl font-bold"> <span id="all-balance">3500 </span>BTD</h1>
                 </div>
             </div>
         </nav>
@@ -58,7 +58,7 @@
         <div id="hero-section" class="sm:pt-16 pt-4 pb-5">
             <div class="flex justify-center gap-14">
                 <button class="btn font-bold xl:text-lg  bg-primarycolor sm:px-8 hover:bg-[#b4f461ce]">Donation</button>
-                <button
+                <button 
                     class="btn font-bold xl:text-lg  bg-secondarycolor sm:px-8 hover:bg-[#b4f461ce]">History</button>
             </div>
 
@@ -82,7 +82,7 @@
                         <div
                             class="flex items-center gap-3 bg-secondarycolor w-fit py-2 px-4 my-4  rounded-md xl:mt-3 xl:mb-5">
                             <img class="w-5" src="assets/coin.png" alt="">
-                            <h1 class="sm:text-xl text-base font-bold"> <span>8500 </span>BTD</h1>
+                            <h1 class="sm:text-xl text-base font-bold"> <span id="noakhali-amount">8500 </span>BTD</h1>
                         </div>
                         <h1 class="sm:text-3xl text-xl font-bold text-black">Aid for Injured in the Quota Movement
                         </h1>
@@ -92,10 +92,13 @@
                             contribution, big or small, makes difference. Please join us in supporting the relief
                             efforts and making a positive impact on the lives of those in need.
                         </p>
-                        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full py-6"
+                        <input id="noakhali-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full py-6"
                             required />
-                        <button
-                            class="btn font-bold xl:text-lg  bg-primarycolor xl:w-3/12 mt-6 mx-auto flex items-center">Donate
+                            <div id="noakhaliinputfaild" class="hidden">
+                                  <h1 class="text-red-600">invlit input</h1>
+                            </div>
+                        <button id="noakhali-button"
+                            class="btn font-bold xl:text-lg bg-primarycolor hover:bg-[#b4f461ce] xl:w-3/12 mt-6 mx-auto flex items-center">Donate
                             Now</button>
                     </div>
                 </div>
@@ -116,7 +119,7 @@
                         <div
                             class="flex items-center gap-3 bg-secondarycolor w-fit py-2 px-4 my-4  rounded-md xl:mt-3 xl:mb-5">
                             <img class="w-5" src="assets/coin.png" alt="">
-                            <h1 class="sm:text-xl text-base font-bold"> <span>00 </span>BTD</h1>
+                            <h1 class="sm:text-xl text-base font-bold"> <span id="feni-amount">00 </span>BTD</h1>
                         </div>
                         <h1 class="sm:text-3xl text-xl font-bold text-black">Donate for Flood Relief in Feni,Bangladesh
                         </h1>
@@ -128,9 +131,12 @@
                             counts towards making a real difference. Please consider donating today to assist those in
                             urgent need.
                         </p>
-                        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full py-6"
+                        <input id="feni-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full py-6"
                             required />
-                        <button
+                            <div id="feniinputfaild" class="hidden">
+                                <h1 class="text-red-600">invlit input</h1>
+                          </div>
+                        <button id="feni-button"
                             class="btn font-bold xl:text-lg  bg-primarycolor xl:w-3/12 mt-6 mx-auto flex items-center">Donate
                             Now</button>
                     </div>
@@ -141,6 +147,7 @@
 
 
         <!-- card - 3 -->
+        
         <div id="card3" class="sm:my-16 my-8 sm:px-3 sm:py-3 border border-b-2 w-11/12 2xl:w-8/12 m-auto rounded-2xl ">
             <div class="hero">
                 <div class="hero-content flex-col lg:flex-row items-start md:gap-8">
@@ -151,21 +158,24 @@
                         <div
                             class="flex items-center gap-3 bg-secondarycolor w-fit py-2 px-4 my-4  rounded-md xl:mt-3 xl:mb-5">
                             <img class="w-5" src="assets/coin.png" alt="">
-                            <h1 class="sm:text-xl text-base font-bold"> <span>1250 </span>BTD</h1>
+                            <h1 class="sm:text-xl text-base font-bold"> <span id="movement-amount">00 </span>BTD</h1>
                         </div>
                         <h1 class="sm:text-3xl text-xl font-bold text-black">Donate for Flood Relief in Feni,Bangladesh
                         </h1>
                         <p class="py-6 text-zinc-600 leading-relaxed">
-                            The recent Quota movement has resulted in numerous injuries and significant hardship for
-                            many individuals. Your support is crucial in providing medical assistance, rehabilitation,
-                            and necessary supplies to those affected. By contributing, you help ensure that injured
-                            individuals receive the care and support they need during this challenging time. Every
-                            donation plays a vital role in alleviating their suffering and aiding in their recovery.
-                            Please consider making a donation to support these brave individuals in their time of need.
+                            The recent floods in Feni have devastated local communities, leading to severe disruption
+                            and loss. Your generous donation will help provide immediate aid, including food, clean
+                            water, and medical supplies, to those affected by this calamity. Together, we can offer
+                            crucial support and help rebuild lives in the aftermath of this disaster. Every contribution
+                            counts towards making a real difference. Please consider donating today to assist those in
+                            urgent need.
                         </p>
-                        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full py-6"
+                        <input id="movement-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full py-6"
                             required />
-                        <button
+                            <div id="movementinputfaild" class="hidden">
+                                <h1 class="text-red-600">invlit input</h1>
+                          </div>
+                        <button id="movement-button"
                             class="btn font-bold xl:text-lg  bg-primarycolor xl:w-3/12 mt-6 mx-auto flex items-center">Donate
                             Now</button>
                     </div>
