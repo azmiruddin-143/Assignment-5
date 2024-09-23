@@ -12,6 +12,7 @@ function alltextvalue(id) {
 }
 
 
+
 // first card javascript //
 //    value set and validation  kora//
 document.getElementById("noakhali-input").addEventListener("input", function () {
@@ -31,6 +32,10 @@ document.getElementById("noakhali-input").addEventListener("input", function () 
         // jodi number na hoy//
         if (OnlyNumber == false) {
             document.getElementById("noakhaliinputfaild").classList.remove("hidden");
+            alert("plz type number");
+            document.getElementById("noakhaliinputfaild").classList.add("hidden");
+            document.getElementById("noakhali-button").removeAttribute("disabled");
+            document.getElementById("noakhali-input").value = "";
         }
 
         // all balance er theke jodi input er valu boro hoy//
@@ -67,6 +72,10 @@ document.getElementById("feni-input").addEventListener("input", function () {
         // jodi number na hoy//
         if (OnlyNumber == false) {
             document.getElementById("feniinputfaild").classList.remove("hidden");
+            alert("plz type number");
+            document.getElementById("feniinputfaild").classList.add("hidden");
+            document.getElementById("feni-button").removeAttribute("disabled");
+            document.getElementById("feni-input").value = "";
         }
 
         // all balance er theke jodi input er valu boro hoy//
@@ -84,8 +93,7 @@ document.getElementById("feni-input").addEventListener("input", function () {
 
 
 
-
-// secont card javascript //
+// therd card javascript //
 //    value set and validation  kora//
 document.getElementById("movement-input").addEventListener("input", function () {
     let noakhaliinput = allinputvalue("movement-input");
@@ -104,6 +112,10 @@ document.getElementById("movement-input").addEventListener("input", function () 
         // jodi number na hoy//
         if (OnlyNumber == false) {
             document.getElementById("movementinputfaild").classList.remove("hidden");
+            alert("plz type number");
+            document.getElementById("movementinputfaild").classList.add("hidden");
+            document.getElementById("movement-button").removeAttribute("disabled");
+            document.getElementById("movement-input").value = "";
         }
 
         // all balance er theke jodi input er valu boro hoy//
@@ -122,53 +134,146 @@ document.getElementById("movement-input").addEventListener("input", function () 
 
 
 
+// ................
+
+// history text ////////
+//  first//
+document.getElementById("noakhali-button").addEventListener("click", function () {
+
+    let noakhaliinput = allinputvalue("noakhali-input");
+    let historyvalue = document.getElementById("history-part");
+    let noakhalititle = alltextvalue("noakhali-title");
+    let div = document.createElement("div");
+    div.innerHTML = `
+             <div class = "w-11/12 2xl:w-8/12 m-auto">
+                <div class="border border-b-1 sm:mt-10 mt-6 sm:py-8 py-3 sm:px-8 px-2 rounded-xl">
+                    <h1 class="font-bold sm:text-2xl text-xl text-black">${noakhaliinput} Taka is ${noakhalititle}</h1>
+                    <p class="pt-3"> Date: ${new Date().toString()}</p>
+                </div>
+            </div>
+        `
+
+    //    others// input emty chek
+    let inputvalue = allinputvalue("noakhali-input");
+    let noakhaliamount = alltextvalue("noakhali-amount");
+    let balancevalue = alltextvalue("all-balance");
+
+    if (inputvalue === "") {
+        alert("emty")
+        return;
+    }
+    let noakhaliinputnew = parseFloat(inputvalue);
+    let finaltextvalue = parseFloat(noakhaliamount);
+    let allbalance = parseFloat(balancevalue);
+    let totaldonate = finaltextvalue + noakhaliinputnew;
+    document.getElementById("noakhali-amount").innerText = totaldonate;
+    let remainingbalance = allbalance - noakhaliinputnew;
+    document.getElementById("all-balance").innerText = remainingbalance;
+    document.getElementById("noakhali-input").value = "";
+    historyvalue.appendChild(div);
+    document.getElementById("popup").classList.remove("hidden")
+
+})
 
 
+// secont///
+
+document.getElementById("feni-button").addEventListener("click", function () {
+    let feniinput = allinputvalue("feni-input");
+    let historyvalue = document.getElementById("history-part");
+    let fenititle = alltextvalue("feni-title");
+    let div = document.createElement("div");
+    div.innerHTML = `
+             <div class = "w-11/12 2xl:w-8/12 m-auto">
+                <div class="border border-b-1 sm:mt-10 mt-6 sm:py-8 py-3 sm:px-8 px-2 rounded-xl">
+                    <h1 class="font-bold sm:text-2xl text-xl text-black">${feniinput} Taka is ${fenititle}</h1>
+                    <p class="pt-3"> Date: ${new Date().toString()}</p>
+                </div>
+            </div>
+        `
+    //    others// input emty chek
+    let inputvalue = allinputvalue("feni-input");
+    let feniamount = alltextvalue("feni-amount");
+    let balancevalue = alltextvalue("all-balance");
+
+    if (inputvalue === "") {
+        alert("emty")
+        return;
+    }
+    let feniinputnew = parseFloat(inputvalue);
+    let finaltextvalue = parseFloat(feniamount);
+    let allbalance = parseFloat(balancevalue);
+    let totaldonate = finaltextvalue + feniinputnew;
+    document.getElementById("feni-amount").innerText = totaldonate;
+    let remainingbalance = allbalance - feniinputnew;
+    document.getElementById("all-balance").innerText = remainingbalance;
+    document.getElementById("feni-input").value = "";
+    historyvalue.appendChild(div);
+    document.getElementById("popup").classList.remove("hidden")
+})
+
+// therd///
+document.getElementById("movement-button").addEventListener("click", function () {
+    let movement = allinputvalue("movement-input");
+    let historyvalue = document.getElementById("history-part");
+    let movementtitle = alltextvalue("movement-title");
+    let div = document.createElement("div");
+    div.innerHTML = `
+         <div class = "w-11/12 2xl:w-8/12 m-auto">
+            <div class="border border-b-1 sm:mt-10 mt-6 sm:py-8 py-3 sm:px-8 px-2 rounded-xl">
+                <h1 class="font-bold sm:text-2xl text-xl text-black">${movement} Taka is ${movementtitle}</h1>
+                <p class="pt-3"> Date: ${new Date().toString()}</p>
+            </div>
+        </div>
+    `
+    //    others// input emty chek
+    let inputvalue = allinputvalue("movement-input");
+    let movementamount = alltextvalue("movement-amount");
+    let balancevalue = alltextvalue("all-balance");
+
+    if (inputvalue === "") {
+        alert("emty")
+        return;
+    }
+    let movementinputnew = parseFloat(inputvalue);
+    let finaltextvalue = parseFloat(movementamount);
+    let allbalance = parseFloat(balancevalue);
+    let totaldonate = finaltextvalue + movementinputnew;
+    document.getElementById("movement-amount").innerText = totaldonate;
+    let remainingbalance = allbalance - movementinputnew;
+    document.getElementById("all-balance").innerText = remainingbalance;
+    document.getElementById("movement-input").value = "";
+    historyvalue.appendChild(div);
+    document.getElementById("popup").classList.remove("hidden")
+
+})
 
 
 // .............................................................................//
 
+// Azmir aso koi kigiguyhgiujdgiodfjoi//////////gb\gbd
+
+// cbjhv kj nkjl mkl donate and history button/
+
+document.getElementById("history-button").addEventListener("click", function () {
+    document.getElementById("donate-part").classList.add("hidden");
+    document.getElementById("history-button").classList.add("bg-primarycolor");
+    document.getElementById("history-button").classList.remove("bg-secondarycolor");
+    document.getElementById("donation-button").classList.remove("bg-primarycolor");
+    document.getElementById("history-part").classList.remove("hidden");
+})
+document.getElementById("donation-button").addEventListener("click", function () {
+    document.getElementById("donate-part").classList.remove("hidden");
+    document.getElementById("donation-button").classList.add("bg-primarycolor");
+    document.getElementById("history-button").classList.remove("bg-primarycolor");
+    document.getElementById("history-button").classList.add("bg-secondarycolor");
+    document.getElementById("history-part").classList.add("hidden");
+
+})
 
 
+document.getElementById("close-button").addEventListener("click", function () {
+    document.getElementById("popup").classList.add("hidden");
 
-
-
-
-
-/// noakhali buton click function kora//
-
-// document.getElementById("noakhali-button").addEventListener("click", function () {
-//     let noakhaliinput = allinputvalue("noakhali-input");
-//     let noakhalitext = alltextvalue("noakhaliamount");
-//     let finalnoakhalitext = parseFloat(noakhalitext);
-//     let noakhalidonate = parseFloat(noakhaliinput) + finalnoakhalitext;
-//     document.getElementById("noakhaliamount").innerText = noakhalidonate;
-//     let allbalance = alltextvalue("all-balance");
-//     let finalallbalance = parseFloat(allbalance);
-//     let allamountandnoakhali = finalallbalance - noakhaliinput;
-//     document.getElementById("all-balance").innerText = allamountandnoakhali
-// })
-
-//   others niom//
-
-function allbuttonclick(noakhalibutton, noakhaliinput, noakhaliamount, allbalance) {
-    document.getElementById(noakhalibutton).addEventListener("click", function () {
-        let inputvalue = allinputvalue(noakhaliinput);
-        let textvalue = alltextvalue(noakhaliamount);
-        let finaltextvalue = parseFloat(textvalue);
-        let totaldonate = parseFloat(inputvalue) + finaltextvalue;
-        document.getElementById(noakhaliamount).innerText = totaldonate;
-        
-        let balancevalue = alltextvalue(allbalance);
-        let finalbalancevalue = parseFloat(balancevalue);
-        let remainingbalance = finalbalancevalue - inputvalue;
-        document.getElementById(allbalance).innerText = remainingbalance;
-    });
-}
-
-// এখন বিভিন্ন বাটনের জন্য এই ফাংশন কল করো
-allbuttonclick("noakhali-button", "noakhali-input", "noakhali-amount", "all-balance");
-allbuttonclick("feni-button", "feni-input", "feni-amount", "all-balance");
-allbuttonclick("movement-button", "movement-input", "movement-amount", "all-balance");
-
+})
 
