@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <html lang="en" data-theme="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blog page</title>
+  <!-- tailwinds css cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- fontaswome cdn link -->
+  <script src="https://kit.fontawesome.com/c81e6c4530.js" crossorigin="anonymous"></script>
+  <!-- daisyUi cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- website color theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d', // আগের রঙ
+            primarycolor: '#B4F461',
+            herdercolor: "rgb(249, 247, 243)",
+            secondarycolor: 'rgba(17, 17, 17, 0.05)',  // এখানে আপনি নিজের নাম ও রঙ ব্যবহার করতে পারেন
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- header part start -->
+  <header class="border border-b-2 sticky top-0 z-10 backdrop-blur" id="head">
+    <!-- nabar start -->
+    <nav class="flex items-center justify-between lg:px-16 2xl:px-20 px-4 sm:px-14 py-4 bg-herdercolor">
+      <div id="menu-button">
+        <a href="/index.html"><button id="home"
+            class="btn bg-primarycolor font-bold xl:text-lg hover:bg-[#b4f461ce] sm:px-8 px-5">Home</button></a>
+      </div>
+
+
+      <div id="main-title" class="pl-10 hidden sm:flex">
+        <div class="flex gap-3 items-center">
+          <img class="w-[30px]" src="assets/logo.png" alt="">
+          <h1 class="font-bold text-2xl">Donate Bangladesh</h1>
+        </div>
+      </div>
+      <div id="main-amount">
+        <div class="flex items-center gap-2">
+          <img src="assets/coin.png" alt="">
+          <div class="flex gap-1">
+            <span id="all-balance" class="text-xl sm:text-2xl font-bold">3500 </span>
+            <h1 class="text-xl sm:text-2xl font-bold">BTD</h1>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- navber end -->
+  </header>
+
+  <!-- //header section end/// -->
+
+
+  <!-- Accordion start -->
+
+  <main class="sm:px-20 ">
+
+    <div id="title" class="mt-10">
+      <h1 class="font-bold sm:text-4xl text-3xl text-black">Imprtant FAQ <span><i
+            class="fa-regular fa-circle-question"></i></span></h1>
+    </div>
+    <!-- FAQ -->
+    <div class="join join-vertical w-full mt-7">
+      <div class="collapse collapse-arrow join-item border-base-300 border">
+        <input type="radio" name="my-accordion-4" checked="checked" />
+        <div class="collapse-title text-lg sm:text-2xl font-medium">What is the full meaning of DOM?</div>
+        <div class="collapse-content">
+          <p class="text-sm sm:text-base">Document object model
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border-base-300 border">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-lg sm:text-2xl font-medium">How can you access an element in the DOM using JavaScript?</div>
+        <div class="collapse-content">
+          <p class="text-sm sm:text-base">We can get a specific ID through document.getElementByOD("id"). And document.querySelector('.class'),
+            Through this we can work with many class names.document.getElementsByTagName('tag')Through this we can
+            easily catch the name of any tag in our HTML file</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border-base-300 border h-full sm:h-28">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-lg sm:text-2xl font-medium">What is the purpose of the DOM?</div>
+        <div class="collapse-content">
+          <p class="text-sm sm:text-base">DOM is a structured that allows easy access to powerful programming languages ​​like JavaScript</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border-base-300 border h-full sm:h-28">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-lg sm:text-2xl font-medium">How do you create a new element and add it to the DOM?</div>
+        <div class="collapse-content">
+          <p class="text-sm sm:text-base">A beautiful stemley design can be created through Javascript That is through the Sting template and to
+            create it a javascript method is used which is document.createElement and appendChild to show its element.
+          </p>
+        </div>
+      </div>
+
+      <div class="collapse collapse-arrow join-item border-base-300 border h-full sm:h-28">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-lg sm:text-2xl font-medium">Well, what can be done with the JavaScript click event?</div>
+        <div class="collapse-content">
+          <p class="text-sm sm:text-base">According to me, a lot of things can be done with the click event, such as changing the design of something
+            through the click, disabling something, enabling the color change, etc., everything is possible through the
+            click event.</p>
+        </div>
+      </div>
+
+      <div class="collapse collapse-arrow join-item border-base-300 border h-full sm:h-28">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-lg sm:text-2xl font-medium">When is fun in JavaScript?</div>
+        <div class="collapse-content">
+          <p class="text-sm sm:text-base">It's fun to work with logic using conditionals with if-else and finding a problem to solve the problem.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+
+
+
+  <script src="programing.js"></script>
+</body>
+
+</html>

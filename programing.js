@@ -1,145 +1,28 @@
 
-//  function //
+//  libary function akhne theke function ke call kore kore bibinno jagay kaj kora oice //
 
+//  all input er valu newya occe//
 function allinputvalue(id) {
     let inputvalue = document.getElementById(id).value;
     return inputvalue;
 }
+
+//  all input er innertext newya occe//
 
 function alltextvalue(id) {
     let inputtext = document.getElementById(id).innerText;
     return inputtext;
 }
 
-
-
-// first card javascript //
-//    value set and validation  kora//
-document.getElementById("noakhali-input").addEventListener("input", function () {
-    let noakhaliinput = allinputvalue("noakhali-input");
-    let allbalance = alltextvalue("all-balance");
-    let finalallbalance = parseFloat(allbalance);
-    let OnlyNumber = true;
-
-    for (let i = 0; i < noakhaliinput.length; i++) {
-        let char = noakhaliinput[i];
-        if (char < '0' || char > '9') {
-            OnlyNumber = false;
-            //  input er man nagitave hole ba string hole //
-            document.getElementById("noakhali-button").setAttribute("disabled", true)
-        }
-
-        // jodi number na hoy//
-        if (OnlyNumber == false) {
-            document.getElementById("noakhaliinputfaild").classList.remove("hidden");
-            alert("plz type number");
-            document.getElementById("noakhaliinputfaild").classList.add("hidden");
-            document.getElementById("noakhali-button").removeAttribute("disabled");
-            document.getElementById("noakhali-input").value = "";
-        }
-
-        // all balance er theke jodi input er valu boro hoy//
-        else if (finalallbalance < parseFloat(noakhaliinput)) {
-            document.getElementById("noakhali-button").setAttribute("disabled", true)
-            document.getElementById("noakhaliinputfaild").classList.remove("hidden");
-        }
-
-        else {
-            document.getElementById("noakhaliinputfaild").classList.add("hidden");
-            document.getElementById("noakhali-button").removeAttribute("disabled");
-        }
-    }
-});
+// ...........................//
 
 
 
-// secont card javascript //
-//    value set and validation  kora//
-document.getElementById("feni-input").addEventListener("input", function () {
-    let noakhaliinput = allinputvalue("feni-input");
-    let allbalance = alltextvalue("all-balance");
-    let finalallbalance = parseFloat(allbalance);
-    let OnlyNumber = true;
+//  first card er javascript//
 
-    for (let i = 0; i < noakhaliinput.length; i++) {
-        let char = noakhaliinput[i];
-        if (char < '0' || char > '9') {
-            OnlyNumber = false;
-            //  input er man nagitave hole ba string hole //
-            document.getElementById("feni-button").setAttribute("disabled", true)
-        }
-
-        // jodi number na hoy//
-        if (OnlyNumber == false) {
-            document.getElementById("feniinputfaild").classList.remove("hidden");
-            alert("plz type number");
-            document.getElementById("feniinputfaild").classList.add("hidden");
-            document.getElementById("feni-button").removeAttribute("disabled");
-            document.getElementById("feni-input").value = "";
-        }
-
-        // all balance er theke jodi input er valu boro hoy//
-        else if (finalallbalance < parseFloat(noakhaliinput)) {
-            document.getElementById("feni-button").setAttribute("disabled", true)
-            document.getElementById("feniinputfaild").classList.remove("hidden");
-        }
-
-        else {
-            document.getElementById("feniinputfaild").classList.add("hidden");
-            document.getElementById("feni-button").removeAttribute("disabled");
-        }
-    }
-});
-
-
-
-// therd card javascript //
-//    value set and validation  kora//
-document.getElementById("movement-input").addEventListener("input", function () {
-    let noakhaliinput = allinputvalue("movement-input");
-    let allbalance = alltextvalue("all-balance");
-    let finalallbalance = parseFloat(allbalance);
-    let OnlyNumber = true;
-
-    for (let i = 0; i < noakhaliinput.length; i++) {
-        let char = noakhaliinput[i];
-        if (char < '0' || char > '9') {
-            OnlyNumber = false;
-            //  input er man nagitave hole ba string hole //
-            document.getElementById("movement-button").setAttribute("disabled", true)
-        }
-
-        // jodi number na hoy//
-        if (OnlyNumber == false) {
-            document.getElementById("movementinputfaild").classList.remove("hidden");
-            alert("plz type number");
-            document.getElementById("movementinputfaild").classList.add("hidden");
-            document.getElementById("movement-button").removeAttribute("disabled");
-            document.getElementById("movement-input").value = "";
-        }
-
-        // all balance er theke jodi input er valu boro hoy//
-        else if (finalallbalance < parseFloat(noakhaliinput)) {
-            document.getElementById("movement-button").setAttribute("disabled", true)
-            document.getElementById("movementinputfaild").classList.remove("hidden");
-        }
-
-        else {
-            document.getElementById("movementinputfaild").classList.add("hidden");
-            document.getElementById("movement-button").removeAttribute("disabled");
-        }
-    }
-});
-
-
-
-
-// ................
-
-// history text ////////
-//  first//
 document.getElementById("noakhali-button").addEventListener("click", function () {
 
+    //  akhne history part er jonno element crete kora occe//
     let noakhaliinput = allinputvalue("noakhali-input");
     let historyvalue = document.getElementById("history-part");
     let noakhalititle = alltextvalue("noakhali-title");
@@ -153,32 +36,59 @@ document.getElementById("noakhali-button").addEventListener("click", function ()
             </div>
         `
 
-    //    others// input emty chek
+    //  input er tupe validation kora occe//
+
     let inputvalue = allinputvalue("noakhali-input");
     let noakhaliamount = alltextvalue("noakhali-amount");
     let balancevalue = alltextvalue("all-balance");
 
-    if (inputvalue === "") {
-        alert("emty")
+    //  input er value number na hole//
+    if (isNaN(inputvalue)) {
+        alert("Just type the number")
         return;
     }
+
+    //  input er value There is nothing thakle//
+    if (inputvalue === "") {
+        alert("There is nothing")
+        return;
+    }
+
+    // input er value er sate Donate er taka plus occe//
     let noakhaliinputnew = parseFloat(inputvalue);
     let finaltextvalue = parseFloat(noakhaliamount);
     let allbalance = parseFloat(balancevalue);
     let totaldonate = finaltextvalue + noakhaliinputnew;
+
+    //  input er value theke jodi Balance er taka kom hoy//
+    if (allbalance < parseFloat(noakhaliinputnew)) {
+        alert("I don't have that much money")
+        return;
+    }
+    //  input er value jodi 0 theke choto hoy //
+    else if (noakhaliinputnew < 0) {
+        alert("Type positive numbers")
+        return
+    }
+
+    // input er value er man dondate e show occe and all amont theke input er amount dicrement occe//
     document.getElementById("noakhali-amount").innerText = totaldonate;
     let remainingbalance = allbalance - noakhaliinputnew;
     document.getElementById("all-balance").innerText = remainingbalance;
     document.getElementById("noakhali-input").value = "";
+    // condision thik rakhar jonno uporer templte html er parent diglar kora hoice//
     historyvalue.appendChild(div);
+    //input er valu thik thkle popup show hobe//
     document.getElementById("popup").classList.remove("hidden")
 
 })
 
 
-// secont///
+
+//  second card er javascript//
 
 document.getElementById("feni-button").addEventListener("click", function () {
+    //  akhne history part er jonno element crete kora occe//
     let feniinput = allinputvalue("feni-input");
     let historyvalue = document.getElementById("history-part");
     let fenititle = alltextvalue("feni-title");
@@ -191,29 +101,54 @@ document.getElementById("feni-button").addEventListener("click", function () {
                 </div>
             </div>
         `
-    //    others// input emty chek
+    //  input er tupe validation kora occe//
     let inputvalue = allinputvalue("feni-input");
     let feniamount = alltextvalue("feni-amount");
     let balancevalue = alltextvalue("all-balance");
 
-    if (inputvalue === "") {
-        alert("emty")
+    //  input er value number na hole//
+    if (isNaN(inputvalue)) {
+        alert("Just type the number")
         return;
     }
+    //  input er value There is nothing thakle//
+    if (inputvalue === "") {
+        alert("There is nothing")
+        return;
+    }
+    // input er value er sate Donate er taka plus occe//
     let feniinputnew = parseFloat(inputvalue);
     let finaltextvalue = parseFloat(feniamount);
     let allbalance = parseFloat(balancevalue);
     let totaldonate = finaltextvalue + feniinputnew;
+
+    //  input er value theke jodi Balance er taka kom hoy//
+    if (allbalance < parseFloat(feniinputnew)) {
+        alert("I don't have that much money")
+        return;
+    }
+    //  input er value jodi 0 theke choto hoy //
+    else if (feniinputnew < 0) {
+        alert("Type positive numbers")
+        return
+    }
+    // input er value er man dondate e show occe and all amont theke input er amount dicrement occe//
     document.getElementById("feni-amount").innerText = totaldonate;
     let remainingbalance = allbalance - feniinputnew;
     document.getElementById("all-balance").innerText = remainingbalance;
     document.getElementById("feni-input").value = "";
+    // condision thik rakhar jonno uporer templte html er parent diglar kora hoice//
     historyvalue.appendChild(div);
+    //input er valu thik thkle popup show hobe//
     document.getElementById("popup").classList.remove("hidden")
 })
 
-// therd///
+//  therd card er javascript//
+
+
+
 document.getElementById("movement-button").addEventListener("click", function () {
+    //  akhne history part er jonno element crete kora occe//
     let movement = allinputvalue("movement-input");
     let historyvalue = document.getElementById("history-part");
     let movementtitle = alltextvalue("movement-title");
@@ -226,34 +161,57 @@ document.getElementById("movement-button").addEventListener("click", function ()
             </div>
         </div>
     `
-    //    others// input emty chek
+
+    //  input er tupe validation kora occe//
     let inputvalue = allinputvalue("movement-input");
     let movementamount = alltextvalue("movement-amount");
     let balancevalue = alltextvalue("all-balance");
 
-    if (inputvalue === "") {
-        alert("emty")
+    //  input er value number na hole//
+    if (isNaN(inputvalue)) {
+        alert("Just type the number")
         return;
     }
+
+    //  input er value There is nothing thakle//
+    if (inputvalue === "") {
+        alert("There is nothing")
+        return;
+    }
+    // input er value er sate Donate er taka plus occe//
     let movementinputnew = parseFloat(inputvalue);
     let finaltextvalue = parseFloat(movementamount);
     let allbalance = parseFloat(balancevalue);
     let totaldonate = finaltextvalue + movementinputnew;
+
+    //  input er value theke jodi Balance er taka kom hoy//
+    if (allbalance < parseFloat(movementinputnew)) {
+        alert("I don't have that much money")
+        return;
+    }
+    //  input er value jodi 0 theke choto hoy //
+    else if (movementinputnew < 0) {
+        alert("Type positive numbers")
+        return
+    }
+    // input er value er man dondate e show occe and all amont theke input er amount dicrement occe//
     document.getElementById("movement-amount").innerText = totaldonate;
     let remainingbalance = allbalance - movementinputnew;
     document.getElementById("all-balance").innerText = remainingbalance;
     document.getElementById("movement-input").value = "";
+    // condision thik rakhar jonno uporer templte html er parent diglar kora hoice//
     historyvalue.appendChild(div);
+    //input er valu thik thkle popup show hobe//
     document.getElementById("popup").classList.remove("hidden")
 
 })
 
 
+
 // .............................................................................//
 
-// Azmir aso koi kigiguyhgiujdgiodfjoi//////////gb\gbd
 
-// cbjhv kj nkjl mkl donate and history button/
+
 
 document.getElementById("history-button").addEventListener("click", function () {
     document.getElementById("donate-part").classList.add("hidden");
@@ -262,6 +220,10 @@ document.getElementById("history-button").addEventListener("click", function () 
     document.getElementById("donation-button").classList.remove("bg-primarycolor");
     document.getElementById("history-part").classList.remove("hidden");
 })
+
+
+// donate page er button er kaj kora oice//
+
 document.getElementById("donation-button").addEventListener("click", function () {
     document.getElementById("donate-part").classList.remove("hidden");
     document.getElementById("donation-button").classList.add("bg-primarycolor");
@@ -272,8 +234,7 @@ document.getElementById("donation-button").addEventListener("click", function ()
 })
 
 
+// popup er button er kaj kora oice//
 document.getElementById("close-button").addEventListener("click", function () {
     document.getElementById("popup").classList.add("hidden");
-
 })
-

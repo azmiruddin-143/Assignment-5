@@ -35,8 +35,8 @@
         <!-- nabar start -->
         <nav class="flex items-center justify-between lg:px-16 2xl:px-20 px-4 sm:px-14 py-4 bg-herdercolor">
             <div id="menu-button">
-                <button id="test"
-                    class="btn bg-primarycolor font-bold xl:text-lg  hover:bg-[#b4f461ce] sm:px-8 px-5">Blog</button>
+                <a href="/blog.html"><button id="blog"
+                    class="btn bg-primarycolor font-bold xl:text-lg  hover:bg-[#b4f461ce] sm:px-8 px-5">Blog</button></a>
             </div>
             <div id="main-title" class="pl-10 hidden sm:flex">
                 <div class="flex gap-3 items-center">
@@ -106,7 +106,7 @@
                             <h1 class="text-red-600">🚫I don't have that much money</h1>
                         </div>
                         <button id="noakhali-button"
-                            class="btn font-bold xl:text-lg bg-primarycolor hover:bg-[#b4f461ce] xl:w-3/12 mt-6 mx-auto flex items-center">Donate
+                            class="btn font-bold xl:text-lg bg-primarycolor hover:bg-[#b4f461ce] w-full mt-6 mx-auto flex items-center">Donate
                             Now</button>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                             <h1 class="text-red-600">🚫I don't have that much money</h1>
                         </div>
                         <button id="feni-button"
-                            class="btn font-bold xl:text-lg  bg-primarycolor xl:w-3/12 mt-6 mx-auto flex items-center">Donate
+                            class="btn font-bold xl:text-lg  bg-primarycolor hover:bg-[#b4f461ce] w-full mt-6 mx-auto flex items-center">Donate
                             Now</button>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
                             <h1 class="text-red-600">🚫I don't have that much money</h1>
                         </div>
                         <button id="movement-button"
-                            class="btn font-bold xl:text-lg  bg-primarycolor xl:w-3/12 mt-6 mx-auto flex items-center">Donate
+                            class="btn font-bold xl:text-lg  bg-primarycolor hover:bg-[#b4f461ce] w-full mt-6 mx-auto flex items-center">Donate
                             Now</button>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
 
     </div>
 
-
+         <!-- history part javascript e createElement diye kora oice -->
     <div id="history-part" class="hidden">
 
     </div>
@@ -212,9 +212,9 @@
 
     <!-- popup section -->
 
-    <div id="popup" class="card bg-base-100 w-3/12 shadow-xl mx-auto fixed top-[35%] left-[35%] hidden">
+    <div id="popup" class="card bg-base-100 2xl:w-3/12 md:w-4/12 w-10/12 shadow-xl mx-auto hidden fixed top-[35%] left-[9%] sm:top-[35%] sm:left-[35%]">
         <div class="card-body items-center text-center">
-            <h2 class="text-4xl text-black font-bold mb-2">Congrates!</h2>
+            <h2 class="sm:text-4xl text-3xl text-black font-bold mb-2">Congrates!</h2>
             <img src="assets/coin.png" alt="">
             <p>You Have Donated for Humankind</p>
             <h1 class="font-bold text-xl">Successfully</h1>
